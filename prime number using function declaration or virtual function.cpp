@@ -10,7 +10,7 @@ private:
 
 public:
 
-    void process(){
+     virtual void process(){
 
     cout<<"Enter your number: "<<endl;
 
@@ -52,13 +52,36 @@ public:
 
 };
 
+class prime : public number{
+
+
+void process(){
+
+
+cout<<" Its working!! ";
+
+}
+
+
+};
+
 int main(){
 
- number n;
+number m;
 
- n.process();
+m.process();
 
-n.display();
+m.display();
+
+ number *n;
+
+ prime p;
+
+ n=&p;
+ n -> process();
+
+n -> display();
+
 
 
 return 0;
