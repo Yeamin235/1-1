@@ -63,10 +63,30 @@ m=1;c=2;
 for i=1:length(x)
     y(i)=m*x(i)+c;
 end
-y
+y;
 
 
+x1=0:10;m1=0.5;c1=2;
+y1=m1*x1+c1;
+figure;
+subplot(1,2,1)
+plot(x1,y1,'-db','linewidth',3 )
+x2=5:10;
+m2=1;
+c2=3;
+y2=m2*x2+c2;
+figure;
+subplot(1,2,2)
+plot(x2,y2,'-db','linewidth',3 )
+%plot(x1,y1,'-db',x2,y2,'-g','linewidth',3 )
+%'-pc','linewidth',2)
+%title ('Name of the Graph')
+%xlabel('Time (s)')
+%ylabel('Velocity(v)')
+%ylim([2 6])
+%xlim([3 7])
+grid on
 
+%grid on
 
-
-
+%legend('velocity','acceleration')
