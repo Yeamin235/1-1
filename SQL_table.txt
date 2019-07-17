@@ -1,0 +1,65 @@
+create table Student(
+std_id int(20) primary key,
+std_name varchar(50) not null,
+dept varchar(20) not null,
+mobile varchar(50) not null,
+address varchar(50));
+
+insert into Student93 values
+('103','R1','ICT','01912333666','mirpur 10'),
+('103','R2','ICT','01912333666','mirpur 7'),
+('103','R3','ICT','01912333666','mirpur 14'),
+('103','R4','ICT','01912333666','mirpur 13'),
+('103','R5','ICT','01912333666','mirpur 12'),
+('103','R6','ICT','01912333666','mirpur 11')
+
+#Find the name and mobile number who lives in mirpur 10
+
+
+
+
+select std_name,mobile
+from Student93
+where address= 'mirpur 10';
+
+
+
+
+create table Course93(
+c_id varchar(50),
+c_name varchar(50) not null,
+semester varchar(50) not null,
+credit_hr float not null,
+primary key(c_id));
+
+
+
+insert into Course values
+('ict2206','Database','summer19',3.0),
+('ict2207','Database Lab','summer19',1.5),
+('ict2106','Data Structure','summer19',3.0),
+('ict2107','Data Structure Lab','summer19',2.0),
+('ict2101','C','summer19',3.0),
+('ict2102','C Lab','summer19',2.0)
+
+insert into Course93 values
+('ict2108','C++','Fall19',3.0),
+('ict2109','C++ Lab','Fall19',2.0),
+('ict2110','Math 101','Fall19',3.0)
+
+
+
+
+
+select c_id,semester
+from Course93
+where c_name= 'Database Lab';
+
+
+create table Prerequisite93(
+c_id varchar(50) primary key,
+pre_c_id varchar(50) not null,
+Foreign key(c_id) references Course(c_id),
+Foreign key(pre_c_id) references course (c_id));
+
+
